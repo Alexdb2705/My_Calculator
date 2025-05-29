@@ -22,7 +22,7 @@ function Calculator() {
                 <CalculatorRow btns={[7, 8, 9, "+"]} setCalcDisplay={setCalcDisplay} />
                 <CalculatorRow btns={[4, 5, 6, "-"]} setCalcDisplay={setCalcDisplay} />
                 <CalculatorRow btns={[1, 2, 3, "x"]} setCalcDisplay={setCalcDisplay} />
-                <CalculatorRow btns={[0, "Del", "=", "/"]} setCalcDisplay={setCalcDisplay} />
+                <CalculatorRow btns={["Del", 0, "=", "/"]} setCalcDisplay={setCalcDisplay} />
             </div>
         </div>
     )
