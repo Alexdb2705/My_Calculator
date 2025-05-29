@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 import { useState } from "react"
 
 function Calculator() {
-    const [calcDisplay, setCalcDisplay] = useState([])
+    const [calcDisplay, setCalcDisplay] = useState([1,2,3,4])
 
     return (
         <div className="calculator-container">
