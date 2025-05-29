@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-function CalculatorDisplay({calcDisplay}) {
-    
+function CalculatorDisplay({ calcDisplay }) {
+
 
     return (
         <div className="calculator-display">{calcDisplay}</div>
