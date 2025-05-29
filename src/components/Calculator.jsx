@@ -9,14 +9,8 @@ function Calculator() {
 
     useEffect(() => {
         console.log(calcDisplay)
-        const lastItem = calcDisplay[calcDisplay.length-1]
-        const prevDisplay = calcDisplay.filter((element) => {return (element !== lastItem)})
-        if (typeof(lastItem) == "number") {
-            console.log("Number")
-        }
-        else if (lastItem == "Del") {
-            const prevLastItem = prevDisplay[prevDisplay.length - 1]
-            const remDisplay = prevDisplay.filter((element) => {return (element !== prevLastItem)})
+        if (calcDisplay[calcDisplay.length - 1] === "Del") {
+            const remDisplay = calcDisplay.splice(0, calcDisplay.length - 2)
             setCalcDisplay(remDisplay)
         }
     }, [calcDisplay])
@@ -25,10 +19,10 @@ function Calculator() {
         <div className="calculator-container">
             <CalculatorDisplay calcDisplay={calcDisplay} />
             <div className="calculator-btns">
-                <CalculatorRow btns={[7, 8, 9, "+"]} setCalcDisplay={setCalcDisplay} calcDisplay={calcDisplay} />
-                <CalculatorRow btns={[4, 5, 6, "-"]} setCalcDisplay={setCalcDisplay} calcDisplay={calcDisplay} />
-                <CalculatorRow btns={[1, 2, 3, "x"]} setCalcDisplay={setCalcDisplay} calcDisplay={calcDisplay} />
-                <CalculatorRow btns={[0, "Del", "=", "/"]} setCalcDisplay={setCalcDisplay} calcDisplay={calcDisplay} />
+                <CalculatorRow btns={[7, 8, 9, "+"]} setCalcDisplay={setCalcDisplay} />
+                <CalculatorRow btns={[4, 5, 6, "-"]} setCalcDisplay={setCalcDisplay} />
+                <CalculatorRow btns={[1, 2, 3, "x"]} setCalcDisplay={setCalcDisplay} />
+                <CalculatorRow btns={[0, "Del", "=", "/"]} setCalcDisplay={setCalcDisplay} />
             </div>
         </div>
     )

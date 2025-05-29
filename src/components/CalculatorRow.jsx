@@ -2,14 +2,12 @@ import { useEffect, useState } from 'react'
 import '../CalculatorRow.css'
 // import { useParams } from 'react-router-dom'
 
-function CalculatorRow({ btns, setCalcDisplay, calcDisplay }) {
+function CalculatorRow({ btns, setCalcDisplay }) {
     const buttons = btns
 
     const Clicker = (e) => {
-        setCalcDisplay((prevDisplay) => ([
-            ...prevDisplay,
-            e
-        ])
+        setCalcDisplay(
+            (prevDisplay) => ([...prevDisplay, e])
         )
     }
 
