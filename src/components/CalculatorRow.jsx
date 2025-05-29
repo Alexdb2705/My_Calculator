@@ -5,24 +5,13 @@ import '../CalculatorRow.css'
 function CalculatorRow({ btns, setCalcDisplay, calcDisplay }) {
     const buttons = btns
 
-    // useEffect(() => {
-    //     const Clicking = () => {
-    //         console.log(`${calcDisplay}`)
-    //     }
-    //     Clicking()
-    // }, [calcDisplay])
-
     const Clicker = (e) => {
-        typeof(e) != "string" && setCalcDisplay((prevDisplay) => ([
+        setCalcDisplay((prevDisplay) => ([
             ...prevDisplay,
             e
-        ]))
-        e == "Del" && setCalcDisplay((prevDisplay) => {
-            const longitud_1 = prevDisplay.length - 1
-            prevDisplay[longitud_1] = `aaa${prevDisplay[longitud_1]}`
-            return prevDisplay.filter((element) => !element.startsWith("aaa"))
-        })
-    }    
+        ])
+        )
+    }
 
     return (
         <div className="calculator-row">

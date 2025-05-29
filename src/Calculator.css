@@ -31,9 +31,9 @@
     width: 80%;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
     color: white;
     font-size: 40px;
     overflow-x: hidden;

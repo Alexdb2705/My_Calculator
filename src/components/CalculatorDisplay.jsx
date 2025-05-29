@@ -4,7 +4,7 @@ function CalculatorDisplay({ calcDisplay }) {
 
 
     return (
-        <div className="calculator-display">{calcDisplay}</div>
+        <div className="calculator-display">{calcDisplay.filter((element) => {return (element !== "Del")})}</div>
     )
 }
 
