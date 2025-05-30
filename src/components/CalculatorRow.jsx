@@ -6,9 +6,36 @@ function CalculatorRow({ btns, setCalcDisplay }) {
     const buttons = btns
 
     const Clicker = (e) => {
-        setCalcDisplay(
-            (prevDisplay) => ([...prevDisplay, e])
-        )
+        e !== "Del" & e !== "="
+            ? setCalcDisplay(
+                (prevDisplay) => (prevDisplay + `${e}`)
+            )
+            : e === "Del"
+                ? setCalcDisplay(
+                    (prevDisplay) => (prevDisplay.slice(0, prevDisplay.length - 1))
+                )
+                : setCalcDisplay(
+                    (prevDisplay) => {
+                        if (prevDisplay.indexOf("+") >= 1) {
+                            const idx = prevDisplay.indexOf("+")
+                            return String(Number(prevDisplay.slice(0, idx)) + Number(prevDisplay.slice(idx + 1))).slice(0, 15)
+                        }
+                        if (prevDisplay.indexOf("-") >= 1) {
+                            const idx = prevDisplay.indexOf("-")
+                            return String(Number(prevDisplay.slice(0, idx)) - Number(prevDisplay.slice(idx + 1))).slice(0, 15)
+                        }
+                        if (prevDisplay.indexOf("x") >= 1) {
+                            const idx = prevDisplay.indexOf("x")
+                            return String(Number(prevDisplay.slice(0, idx)) * Number(prevDisplay.slice(idx + 1))).slice(0, 15)
+                        }
+                        if (prevDisplay.indexOf("/") >= 1) {
+                            const idx = prevDisplay.indexOf("/")
+                            return String(Number(prevDisplay.slice(0, idx)) / Number(prevDisplay.slice(idx + 1))).slice(0, 15)
+                        }
+                        return prevDisplay
+
+                    }
+                )
     }
 
     return (

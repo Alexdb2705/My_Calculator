@@ -7,6 +7,7 @@
 * {
     --numbersSize: 15px;
     --numbersSizeBigger: 30px;
+    --cleanerSize: 40px;
     --minCalcSizeWidth: 240px;
 }
 
@@ -27,8 +28,9 @@
     background-color: rgba(128, 128, 128, 0.5);
     position: absolute;
     top: 6%;
+    right: 10%;
     height: 15%;
-    width: 80%;
+    width: 70%;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -52,4 +54,27 @@
     align-items: center;
     border: 0px;
     border-radius: 5px;
+}
+
+.clean-btn {
+    margin: 0px 4px;
+    border-radius: 10px;
+    border: 0px solid black;
+    font-weight: 100;
+    font-size: var(--cleanerSize);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 6%;
+    left: 4%;
+    padding: 20px 30px;
+}
+
+.clean-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 }

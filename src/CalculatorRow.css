@@ -9,7 +9,7 @@
     border-radius: 5px;
 }
 
-button {
+.calculator-btns button {
     width: 70%;
     height: 70%;
     margin: 0px 4px;
@@ -25,7 +25,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.calculator-btns button:hover {
     font-size: var(--numbersSizeBigger);
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
