@@ -5,9 +5,12 @@
 }
 
 * {
-    --numbersSize: 15px;
+    --numbersSize: 20px;
     --numbersSizeBigger: 30px;
-    --cleanerSize: 40px;
+    --numbersSizeSmaller: 10px;
+    --cleanerSize: 30px;
+    --cleanerSizeBigger: 40px;
+    --cleanerSizeSmaller: 20px;
     --minCalcSizeWidth: 240px;
 }
 
@@ -15,22 +18,20 @@
     background-color: rgba(67, 238, 127, 0.7);
     height: 85vh;
     min-width: var(--minCalcSizeWidth);
-    width: 50vw;
+    width: 55vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     border-radius: 15px;
+    transition: all 0.1s;
 }
 
 .calculator-display {
     background-color: rgba(128, 128, 128, 0.5);
-    position: absolute;
-    top: 6%;
-    right: 10%;
-    height: 15%;
-    width: 70%;
+    width: 90%;
+    height: 90%;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -57,24 +58,58 @@
 }
 
 .clean-btn {
-    margin: 0px 4px;
+    margin-right: 15px;
     border-radius: 10px;
     border: 0px solid black;
     font-weight: 100;
-    font-size: var(--cleanerSize);
+    font-size: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transition: all 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    position: absolute;
-    top: 6%;
-    left: 4%;
-    padding: 20px 30px;
+    padding: 15px 24px;
 }
 
 .clean-btn:hover {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    font-size: var(--cleanerSizeBigger);
+}
+
+.calculator-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 15%;
+    width: 80%;
+    position: absolute;
+    top: 20px;
+}
+
+
+@media (min-width: 850px) {
+    .calculator-container {
+        width: 50vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .calculator-container {
+        width: 45vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .calculator-container {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .clean-btn {
+        padding: 10px;
+    }
 }
